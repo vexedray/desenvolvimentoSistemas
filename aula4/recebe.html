@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Recebe</title>
+</head>
+<body>
+    <!-- <h1>Recebeu <span id="nomeRecebido2"></span> <span id="nomeRecebido"></span></h1> -->
+
+    <span id="dados"></span>
+    <script>
+        let dados = '';
+        const params = new URLSearchParams(window.location.search);
+        const produto = params.get("produto");
+        const quantidade = params.get("quantidade");
+        const tipo = params.get("tipo");
+        const pagamento = params.getAll("pagamento");
+        const entrega = params.getAll("entrega");
+        const valor = params.get("valor");
+        dados += "<b>Produto</b>: " + decodeURIComponent(produto) + "<br>";
+        dados += "<b>Quantidade</b>: " + decodeURIComponent(quantidade) + "<br>";
+        dados += "<b>Tipo</b>: " + decodeURIComponent(tipo) + "<br>";
+        //dados += "<b>Pagamento</b>: " + decodeURIComponent(pagamento) + "<br>";
+
+        dados += "<b>Meios de pagamentos: </b>";
+    
+        if(pagamento.length > 0) {
+              dados += "<ul>";
+            pagamento.forEach(pg =>{
+                dados += "<li>" + pg + "</li>";
+            })
+            dados += "</ul>"
+        } else{
+            dados += "Nenhum meio de pagamento selecionado";
+        }
+
+        //dados += "<b>Entrega</b>: " + decodeURIComponent(entrega) + "<br>";
+        if(entrega.length > 0){
+            dados += "<b>Entrega: </b>" + entrega + "<br>";
+        }
+
+        dados += "<b>Valor unitário: </b>" + valor + "<br>";    
+
+        if (tipo == "atacado"){
+            desconto = ((valor*quantidade)*0.10)
+            dados += "<b>Valor total: </b>" + ((valor*quantidade)-desconto);
+        } else{
+            dados += "<b>Valor total: </b>" + (valor*quantidade);
+        }
+
+        //dados += "<b>Valor total: </b>" + (valor*quantidade);
+        //  if(valor > 0){
+        //     total = parseFloat(valor) * parseInt(quantidade);
+        //     dados += "<b>Valor Total: </b>" + total + "<br>";
+        // }
+
+        document.getElementById("dados").innerHTML  = dados;
+
+
+    //    const params = new URLSearchParams(window.location.search);
+    //    const nome = params.get("produto");    
+    //    if (nome) {
+    //        document.getElementById("nomeRecebido").textContent = decodeURIComponent(nome);
+    //    } else {mmmmm
+    //        document.getElementById("nomeRecebido").textContent = "Nenhum produto recebido.";
+    //    }
+    //    
+    //    const params2 = new URLSearchParams(window.location.search);
+    //    const nome2 = params.get("quantidade");    
+    //    if (nome) {
+    //        document.getElementById("nomeRecebido2").textContent = decodeURIComponent(nome2);
+    //    } else {
+    //        document.getElementById("nomeRecebido2").textContent = "Nenhum produto recebido.";
+    //    }
+
+       
+    </script>
+</body>
+</html>

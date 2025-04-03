@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Forms</title>
+</head>
+<body>
+    <form action="recebe.html" method="get">
+        <input type="text" name="cliente" value="Pedro da Silva" disabled>
+        <br>
+        <input type="hidden" name="oculto" id="xxx">
+        <label for="produto">Produto</label>
+        <input type="text" id="produto" name="produto" maxlength="10" minlength="3" autofocus required>
+        <br>
+        <label for="quantidade">Quantidade</label>
+        <input type="number" id="quantidade" name="quantidade" autocomplete="off" min="1" max="99" step="5" required>
+        <br>
+        <input type="radio" name="tipo" value="varejo" checked>Varejo
+        <input type="radio" name="tipo" value="atacado">Atacado
+        <br>
+        <input type="checkbox" name="pagamento" value="pix" checked>Pix
+        <input type="checkbox" name="pagamento" value="dinheiro" >Dinheiro
+        <input type="checkbox" name="pagamento" value="cartao" >Cartão
+        <br>
+        <label for="entrega">Entrega</label>
+        <select name= "entrega" id="entrega">
+            <option value="sedex" selected>Sedex</option>
+            <option value="correios">Correio</option>
+            <option value="transportadora">Transportadora</option>
+            <option value="retirada">Retirada</option>
+        </select>
+        <br>
+        <label for="valor">Valor Unitário</label>
+        <input type="number" id="valor" name="valor" autocomplete="off" min="1" required>
+        <br>
+        <button>Enviar</button>
+
+    </form>
+</body>
+</html>
