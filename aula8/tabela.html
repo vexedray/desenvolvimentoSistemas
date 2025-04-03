@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Acomodações</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body onload="carregarDados()">
+    <div class="container mt-4">
+        <h2>Lista de Acomodações e Temporadas</h2>
+        <table class="table table-striped table-responsive">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Tipo</th>
+                    <th>Início</th>
+                    <th>Término</th>
+                </tr>
+            </thead>
+            <tbody id="tabelaDados">
+            </tbody>
+        </table>
+        <a href="formulario.html" class="btn btn-secondary">Voltar</a>
+    </div>
+
+    <script>
+        function carregarDados() {
+            let dados = localStorage.getItem("dadosAcomodacao");
+            if (dados) {
+                let acomodacao = JSON.parse(dados);
+                let tabela = document.getElementById("tabelaDados");
+                let novaLinha = tabela.insertRow();
+                novaLinha.insertCell(0).textContent = acomodacao.nome;
+                novaLinha.insertCell(1).textContent = acomodacao.tipo;
+                novaLinha.insertCell(2).textContent = acomodacao.inicio;
+                novaLinha.insertCell(3).textContent = acomodacao.termino;
+                localStorage.removeItem("dadosAcomodacao");
+            }
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

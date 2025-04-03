@@ -1,0 +1,82 @@
+body {
+    background-color: #ffffff;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    background-color: #000000;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.1);
+}
+
+h2 {
+    color: #ffffff;
+    font-size: 24px;
+}
+
+.table {
+    background-color: #2c2c2c;
+    color: #ffffff;
+    border-radius: 8px;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.table th {
+    background-color: #333333;
+    color: #ffffff;
+    padding: 10px;
+}
+
+.table tbody tr:nth-child(odd) {
+    background-color: #252525;
+}
+
+.table tbody tr:nth-child(even) {
+    background-color: #2c2c2c;
+}
+
+.table td {
+    padding: 10px;
+}
+
+.form-control {
+    background-color: #333333;
+    color: #ffffff;
+    border: 1px solid #555555;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.form-control::placeholder {
+    color: #bbbbbb;
+}
+
+.btn-primary {
+    background-color: #5c8b22;  /* Verde */
+    border-color: #5c8b22;  /* Mesmo tom de verde */
+    color: #ffffff;
+    border-radius: 5px;
+    padding: 10px 20px;
+    width: 100%;  /* Faz o botão ocupar toda a largura da div */
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #4a6e1a;  /* Verde mais escuro no hover */
+}
+
+.alert {
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.alert-danger {
+    background-color: #b30000;
+    color: #ffffff;
+}
+
